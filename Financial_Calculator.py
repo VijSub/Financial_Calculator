@@ -1,5 +1,4 @@
 import math
-import sympy
 
 def annuity_monthly_growth():
     P = float(input("Enter the principal amount in € (P): "))
@@ -10,7 +9,7 @@ def annuity_monthly_growth():
     print("Annuity =", annuity)
 
 def calculate_annuity_continuous_growth():
-    P = float(input("Enter the principal amount (P): "))
+    P = float(input("Enter the principal amount in € (P): "))
     r = float(input("Enter the annual interest rate (as a decimal): "))
     t = float(input("Enter the time in years (t): "))
     n = int(input("Enter the number of times interest is compounded per year (n): "))
@@ -21,7 +20,7 @@ def calculate_annuity_continuous_growth():
     print("Annuity =", annuity)
 
 def calculate_monthly_mortgage_payment():
-    P = float(input("Amount borrowed (principal): "))
+    P = float(input("Amount borrowed in € (principal): "))
     r = float(input("Annual percentage rate: "))
     t = float(input("Number of years: "))
     # numerator
@@ -29,13 +28,13 @@ def calculate_monthly_mortgage_payment():
     # denominator
     d = (1+r/12)**(12*t)-1
     pmt = P*n/d
-    print("Monthly payment = $", pmt)
+    print("Monthly payment =", pmt,"€")
 
 def estimate_retirement_investment_balance():
-    p = float(input("Enter the principal amount (p): "))
+    p = float(input("Enter the principal amount in € (p): "))
     r = float(input("Enter the annual interest rate (as a decimal, r): "))
     t = int(input("Enter the number of years (t): "))
-    monthly = float(input("Enter the monthly contribution amount (monthly): "))
+    monthly = float(input("Enter the monthly contribution amount in €: "))
 
     annuity = p
 
@@ -45,11 +44,11 @@ def estimate_retirement_investment_balance():
     annuity_value = round(annuity, 2)
     annual_income = round(annuity * r, 2)
 
-    print("Annuity value =", annuity_value)
-    print("Annual income from interest =", annual_income)
+    print("Annuity value =", annuity_value,"€")
+    print("Annual income from interest =", annual_income,"€")
 
 def determine_time_to_double():
-    principal = float(input("Enter the initial amount: "))
+    principal = float(input("Enter the initial amount in €: "))
     annual_rate = float(input("Enter the annual interest rate (as a decimal, e.g., 0.05 for 5%): "))
     
     if annual_rate <= 0:
@@ -63,8 +62,8 @@ def determine_time_to_double():
     print(f"It takes {time} years for the initial amount to double at the specified annual rate.")
 
 def rate_of_growth():
-    starting_value = float(input("Enter the starting value: "))
-    ending_value = float(input("Enter the ending value: "))
+    starting_value = float(input("Enter the starting value in €: "))
+    ending_value = float(input("Enter the ending value in €: "))
     time = float(input("Enter the time period (in years): "))
     
     if time <= 0:
